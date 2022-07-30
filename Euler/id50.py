@@ -1,3 +1,4 @@
+#prime number generator
 def prime(n):
     if(n == 1): return 2
     if(n == 2): return 3
@@ -22,7 +23,8 @@ def prime(n):
             flg = 0
             
     return p
-  
+
+#prime number check
 def isPrime(n):
     if(n == 2): return 1
     for i in range(3,n,2):
@@ -30,6 +32,7 @@ def isPrime(n):
             return 0
     return 1
 
+#sum of consecutive prime number
 def id50(i,x):
     s = 0
     while(i < x):
@@ -37,5 +40,8 @@ def id50(i,x):
         t = isPrime(s)
         print(i, prime(i), s, t)
         i = i+1
-        
-        
+
+#run
+i=4
+x=550
+id50(i,x)
