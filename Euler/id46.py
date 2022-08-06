@@ -30,6 +30,6 @@ def id46():
             while(isPrime(x)):
                 x = x + 2
             a = 1
-        elif(y > 0):
+        else:
             a = a + 1
             
