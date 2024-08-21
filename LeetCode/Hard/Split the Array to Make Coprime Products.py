@@ -11,16 +11,10 @@ class Solution:
             return -1
         
         s = 0
-        e = 0
         for i in range(n-1,0,-1):
             g1 = gcd(nums[0],nums[i])
             if g1 > 1:
                 s=i
-                break
-        for i in range(0,n):
-            g1 = gcd(nums[-1],nums[i])
-            if g1 > 1:
-                e=i
                 break
         
         prefix = math.prod(nums[:s+1])
