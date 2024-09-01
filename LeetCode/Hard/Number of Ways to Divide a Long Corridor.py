@@ -8,7 +8,7 @@ class Solution:
             if corridor[0] == "S" and corridor[1] == "S":
                 return 1
             return 0
-        if n == 3:#sss sps ssp pss ,pps ppp
+        if n == 3:
             cnt=0
             for c in corridor:
                 if c == "S":
@@ -16,7 +16,7 @@ class Solution:
             if cnt == 2:
                 return 1
             return 0
-        if n == 4:#sss sps ssp pss ,pps ppp
+        if n == 4:
             cnt=0
             for c in corridor:
                 if c == "S":
