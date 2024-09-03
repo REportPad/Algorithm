@@ -4,8 +4,6 @@ class Solution:
         n = len(nums)
         if n == 1:
             return 0
-        if n == 2:
-            return abs(nums[1]-nums[0])
 
         nums = sorted(nums)
         ans=0
