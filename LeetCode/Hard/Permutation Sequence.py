@@ -15,7 +15,7 @@ class Solution:
             return "21"
         num = []
         for i in range(1,n+1):
-            num.append(str(i))# num = ["1","2","3","4","5","6","7","8","9"]
+            num.append(str(i))
         t = n-1
         v = k
         f = facto(t)
