@@ -18,15 +18,17 @@ def prime_power_triples(N,primes,L):
   for a in range(0,L):
     A=primes[a]**2
     for b in range(0,L):
-      B=primes[b]**3
+      B=A+primes[b]**3
+      if B >= N:
+        break
       for c in range(0,L):
-        x = A +B +primes[c]**4
+        x = B +primes[c]**4
         if x >= N:
           break
         set0.add(x)
   return len(set0)
-
+  
 N=5*10**7
-primes = sieve_of_eratosthenes(7100)
+primes = sieve_of_eratosthenes(7079)
 L=len(primes)
 prime_power_triples(N,primes,L)
