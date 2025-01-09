@@ -1,26 +1,27 @@
 def is_palindrome(n):
-  s = str(n)
-  if s == s[::-1]:
-    return True
-  return False
+    """Check if a number is palindromic."""
+    s = str(n)
+    return s == s[::-1]
 
 def palindromic_sums(N):
-  M = int(pow(N,0.5))
-  arr = [1,4]
-  set1 = set()
-  set1.add(5)
-  for i in range(3,M):
-    arr.append(pow(i,2))
-    n = arr[-1]
-    for j in range(len(arr)-2,-1,-1):
-      n += arr[j]
-      if n >= N:
-        break
-      if is_palindrome(n):
-        set1.add(n)
-  return set1
+    """
+    Find all palindromic numbers less than N that can be expressed as sums of consecutive squares.
+    """
+    M = int(pow(N, 0.5))  # Upper limit for the square root
+    palindromic_numbers = set()
+    
+    for i in range(1, M):
+        current_sum = i * i
+        for j in range(i + 1, M):
+            current_sum += j * j
+            if current_sum >= N:
+                break
+            if is_palindrome(current_sum):
+                palindromic_numbers.add(current_sum)
+    
+    return palindromic_numbers
 
-N=10**8
-set1 = palindromic_sums(N)
-# print(max(set1))
-print('sum:',sum(set1))
+# Solve for N = 10^8
+N = 10**8
+result_set = palindromic_sums(N)
+print("Sum of all palindromic numbers:", sum(result_set))
